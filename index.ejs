@@ -1,0 +1,11 @@
+
+<h1>All Artists</h1>
+    <div>
+        <a href="/artists/new">Add Artist</a>
+    </div>
+
+<ul>
+    <%  for (let artist of Artists) {%>
+    <li><a href="/artists/<%= artist._id %>"><%= artist.name %>/a></li>
+    <% } %> 
+</ul>
