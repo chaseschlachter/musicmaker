@@ -1,0 +1,17 @@
+<% layout('layouts/boilerplate') %> 
+<h1><%= venue.title %> </h1>
+<h2><%= venue.location %> </h2>
+<img src="<%= venue.image %> " alt="">
+<p><%= venue.description %> </p>
+<p> <a href="/venues/<%=venue._id%>/edit">
+    <button>Edit</button>
+</a>
+</p>
+<p>
+    <form action="/venues/<%=venue.id%>?_method=DELETE" method="POST">
+    <button>Delete</button>
+    </form>
+</p>    
+<footer>
+    <a href="/venues">All venues</a>
+</footer> 
