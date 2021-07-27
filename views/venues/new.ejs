@@ -1,0 +1,40 @@
+<% layout('layouts/boilerplate') %> 
+<div class="row">
+    <h1 class="text-center">New Venue</h1>
+    <div class="col-6 offset-3">
+        <form action="/venues" method="POST" novalidate class="validated-form">
+            <div class="mb-3">
+                <label label="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="venue[title]" required>
+            </div>
+            <div class="mb-3">
+                <label label="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="venue[location]" required>
+            </div>
+            <div class="mb-3">
+                <label label="form-label" for="image">Image URL</label>
+                <input class="form-control" type="text" id="image" name="venue[image]" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Venue Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                        aria-describedby="price-label" name="venue[price]" required>
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+              
+            <div class="mb-3">
+                <label label="form-label" for="description">Description</label>
+                <input class="form-control" type="text" id="description" name="venue[description]" required>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add Venue</button>
+            </div>
+            <a href="/venues">All venues</a>
+        </form>        
+    </div>
+</div>
