@@ -1,0 +1,29 @@
+<% layout('layouts/boilerplate') %> 
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card mb-3">
+            <img src="<%= event.image %>"  class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= event.event_name %></h5>
+              <p class="card-text"><%= event.description %></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Artist: <%= event.artist.username %></li>
+              <li class="list-group-item">Event date</li>
+              <li class="list-group-item">Event time</li>
+            </ul>
+            <% if (currentUser && event.artist.equals(currentUser._id)) {%> 
+            <div class="card-body">
+              <a class="card-link btn btn-primary" href="/events/<%=event.id%>/edit">Edit</a>
+              <form class="d-inline" action="/events/<%=event.id%>?_method=DELETE" method="POST">
+                <button class="btn btn-primary">Delete</button>
+                </form>
+            </div>
+            <% } %> 
+          </div>
+          <div class="card-footer text-muted">
+            Back to
+            <a href="/events">All Events</a>
+          </div>
+    </div>
+</div>
