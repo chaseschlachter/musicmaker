@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') %>  
+<h1>All Artists</h1>
+    <div>
+        <a href="/artists/new">Create Artist Profile</a>
+    </div>
+<% for (let artist of artists){%>
+    <div class="card" mb-3">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><%= artist.username %> </h5>
+                    <p class="text">Genre: <%= artist.genre %> </p>
+                    <p class="text">Group size: <%= artist.size %> </p>
+                    <p class="text">
+                        <small class="text-muted"><%= artist.location %> </small>
+                    </p>
+                    <a class="btn btn-primary" href="/artists/<%= artist._id %>">View <%= artist.username %> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<% }%>
